@@ -1,0 +1,28 @@
+cart=[]
+cart.append(("milk",1,80))
+cart.append(("rice",1,150))
+cart.append(("oil",2,250))
+cart.append(("masake",5,200))
+cart.remove(("oil",2,250))
+
+for item in cart:
+    name,quantity,price=item
+    total=quantity * price
+    print(name,quantity,price,total)
+if price > 100:
+    discount=total * 0.10
+elif price <= 100 and price >= 50:
+    discount=total * 0.05
+else:
+    discount=0
+total=total-discount
+print("discount",discount)
+print("total",total)
+print(cart)
+
+output:-milk 1 80 80
+rice 1 150 150
+masake 5 200 1000
+discount 100.0
+total 900.0
+[('milk', 1, 80), ('rice', 1, 150), ('masake', 5, 200)]

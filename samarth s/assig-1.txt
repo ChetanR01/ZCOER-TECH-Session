@@ -1,0 +1,32 @@
+mydict={
+    "rahul":{
+        "age":20,
+        "marks":86
+    },
+    "rohit":{
+        "age":21,
+        "marks":90
+    },
+    "rishabh":{
+        "age":22,
+        "marks":92
+    }
+}
+print(mydict)
+#---problem no 1a-----
+marks=int(input("enter the marks of students"))
+if marks >= 90:
+    print("A grade")
+elif marks>= 80:
+    print("B grade")
+elif marks >= 70:
+    print("C grade")
+elif marks >= 60:
+    print("D grade")
+else:
+    print("F grade")
+
+output:-
+{'rahul': {'age': 20, 'marks': 86}, 'rohit': {'age': 21, 'marks': 90}, 'rishabh': {'age': 22, 'marks': 92}}
+enter the marks of students90
+A grade

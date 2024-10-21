@@ -1,0 +1,24 @@
+balance=0.0
+while True:
+    amount=int(input("enter the amount:"))
+    if amount==0:
+        print("account balance is",balance)
+        break
+    elif amount > 0:
+        balance += amount
+        print("money is deposite in account",balance)
+    else:
+        balance -= amount
+        print("money is withdraw in account",balance)
+print(balance)
+
+output:-
+enter the amount:100
+money is deposite in account 100.0
+enter the amount:50
+money is deposite in account 150.0
+enter the amount:-150
+money is withdraw in account 300.0
+enter the amount:0
+account balance is 300.0
+300.0

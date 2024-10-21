@@ -1,0 +1,46 @@
+library={}
+while True:
+    print("---menu----")
+    print("1. Add book to library")
+    print("2. borrow book from library")
+    print("3. return book from library")
+    print("4. display the available books")
+    print("5. search the book")
+    print("6. exit")
+    choice=input("enter the choice:")
+    if choice == "1":
+        book_title = input("Enter book title: ")
+        book_author = input("Enter book author: ")
+        year = input("Enter book publishe year: ")
+        library[book_title] = {"author": book_author, "year": year}
+    elif choice =="2":
+        book_title = input("Enter book title: ")
+        if book_title in library:
+            library[book_title]['available']=False
+            print(f'book "{book_title}" is now borrowed')
+        else:
+            print(f'book "{book_title}" is not available')
+    elif choice =="3":
+        book_title = input("Enter book title: ")
+        if book_title in library:
+            library[book_title]['available']=True
+            print(f'book "{book_title}" is now available')
+        else:
+            print(f'book "{book_title}" is not available')
+    elif choice =="4":
+        for book_title, details in library.items():
+            if details['available']:
+                print(f'title: {book_title}, author:{details["author"]},year:{details["year"]}')
+    elif choice =='5':
+        query=input("enter title or author to search:")
+        found=False
+        for book_title,details in library.items():
+            if query.lower() in book_title.lower or query.lower() in details['author'].lower():
+                print(f'title: {book_title}, author:{details["author"]},year:{details["year"]},available: {details["available"]}')
+                found=True
+            if not found:
+                print("no book found")
+    elif choice=='6':
+        print("exiting the program")
+    else:
+        print("invalid choice")
